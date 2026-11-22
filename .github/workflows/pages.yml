@@ -1,0 +1,70 @@
+name: Deploy portfolio to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      index_sha: ${{ steps.release.outputs.index_sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run build:pages
+      - id: release
+        name: Record the homepage checksum
+        shell: bash
+        run: |
+          index_sha=$(sha256sum out/index.html | cut -d ' ' -f1)
+          echo "index_sha=$index_sha" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
+      - name: Verify the published homepage
+        shell: bash
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+          INDEX_SHA: ${{ needs.build.outputs.index_sha }}
+        run: |
+          for attempt in {1..20}; do
+            if curl --fail --silent --show-error --location --compressed --max-time 15 \
+                "${PAGE_URL%/}/?revision=$GITHUB_SHA" -o "$RUNNER_TEMP/index.html" &&
+                echo "$INDEX_SHA  $RUNNER_TEMP/index.html" | sha256sum --check --status; then
+              echo "Verified $PAGE_URL at $GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            sleep 6
+          done
+          echo "::error::The public homepage does not match the uploaded build."
+          exit 1

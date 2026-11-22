@@ -21,6 +21,10 @@ The orbital geometry is generated locally in `components/Flux.tsx`. It responds 
 
 ## GitHub Pages
 
-Run `npm run deploy:pages` from the repository root to build the static site for `/portfolio/` and push the contents of `out/` to the `gh-pages` branch. The Git remote must allow pushes. In repository Settings → Pages, choose **Deploy from a branch**, **gh-pages**, and **/ (root)**. The project URL is https://vuthysreang.github.io/portfolio/.
+The Pages workflow builds and publishes the portfolio on each push to `main`. In repository **Settings → Pages → Build and deployment**, choose **GitHub Actions** as the source. You can also open **Actions → Deploy portfolio to GitHub Pages → Run workflow**, select `main`, and start a deployment manually.
 
-To generate the same static files locally without publishing, run `npm run build:pages`. Ordinary development and production builds still run at the domain root.
+The workflow checks that the public homepage matches the build.
+
+Run `npm run build:pages` for a local static export in `out/`. The published site uses the `/portfolio/` path. Ordinary development and production builds still run at the domain root.
+
+[Open the portfolio](https://vuthysreang.github.io/portfolio/)
