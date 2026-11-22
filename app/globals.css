@@ -427,8 +427,7 @@ h2 span {
   height: 1px;
   background: var(--mint);
 }
-.section-heading,
-.contact-inner {
+.section-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -711,6 +710,13 @@ footer a,
   height: 255px;
   margin: 0;
 }
+@media (min-width: 681px) and (max-width: 900px) {
+  .header-inner nav {
+    position: static;
+    transform: none;
+    gap: 14px;
+  }
+}
 @media (max-width: 900px) {
   .wrap {
     width: 90%;
@@ -830,10 +836,6 @@ footer a,
     grid-template-columns: 1fr 1fr;
     gap: 12px;
   }
-  .contact-inner {
-    align-items: flex-start;
-    flex-direction: column;
-  }
   .text-link {
     font-size: 11px;
   }
@@ -885,8 +887,7 @@ footer a,
 }
 .career-intro > p,
 .role-details p,
-.role-details li,
-.profile-facts dd {
+.role-details li {
   color: var(--muted);
   font-size: 14px;
   line-height: 1.65;
@@ -928,8 +929,7 @@ footer a,
   box-shadow: 0 0 0 4px var(--wash);
 }
 .career-date,
-.role-meta,
-.profile-facts dt {
+.role-meta {
   font: 11px/1.5 var(--mono);
   color: var(--soft);
 }
@@ -997,25 +997,6 @@ footer a,
   color: var(--fg);
   letter-spacing: -0.03em;
 }
-.profile-facts {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 18px;
-  margin: 22px 0 0;
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
-}
-.profile-facts dt {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  margin-bottom: 8px;
-  color: var(--mint);
-}
-.profile-facts dd {
-  margin: 0;
-  font-size: 13px;
-}
 @media (max-width: 680px) {
   .experience {
     grid-template-columns: 1fr;
@@ -1028,13 +1009,14 @@ footer a,
   .profile-intro p {
     font-size: 18px;
   }
-  .profile-facts {
-    grid-template-columns: 1fr;
-  }
 }
 @media (max-width: 380px) {
-  .header-inner { width: calc(100% - 18px); }
-  .brand-icon { display: none; }
+  .header-inner {
+    width: calc(100% - 18px);
+  }
+  .brand-icon {
+    display: none;
+  }
   nav {
     gap: 9px;
   }
@@ -1048,5 +1030,199 @@ footer a,
 @media (prefers-reduced-motion: no-preference) {
   .career-role[open] .role-details {
     animation: arrive 0.32s ease-out both;
+  }
+}
+
+.mobile-contact-link {
+  display: none;
+}
+.bio .profile-languages {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0 0;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+.profile-languages svg {
+  flex: none;
+  color: var(--mint);
+}
+.education {
+  padding-block: clamp(42px, 5vw, 70px);
+  border-bottom: 1px solid var(--line);
+}
+.education-grid,
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: clamp(24px, 6vw, 88px);
+}
+.education-grid {
+  margin-top: 26px;
+}
+.degree-card {
+  padding: clamp(23px, 3.1vw, 44px);
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(ellipse at top right, var(--wash), transparent 75%),
+    var(--panel);
+}
+.degree-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  color: var(--mint);
+}
+.degree-meta span,
+.school-history li span,
+.school-location,
+.contact-channels small {
+  font: 11px/1.5 var(--mono);
+  color: var(--soft);
+}
+.degree-card h3 {
+  font-size: clamp(24px, 2.2vw, 36px);
+  line-height: 1.12;
+  letter-spacing: -0.05em;
+  font-weight: 650;
+  max-width: 19ch;
+}
+.degree-card p {
+  margin: 15px 0;
+  max-width: 45ch;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.degree-card .institute {
+  margin: 8px 0 0;
+  color: var(--fg);
+  font-weight: 600;
+}
+.degree-card .text-link {
+  display: inline-flex;
+  color: var(--mint);
+}
+.school-history h3 {
+  font-size: 20px;
+  font-weight: 650;
+  letter-spacing: -0.04em;
+}
+.school-location {
+  margin-top: 4px;
+}
+.school-history ol {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+.school-history li {
+  position: relative;
+  display: grid;
+  gap: 2px;
+  padding: 0 0 16px 22px;
+}
+.school-history li:last-child {
+  padding-bottom: 0;
+}
+.school-history li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 6px;
+  bottom: -6px;
+  border-left: 1px solid var(--line);
+}
+.school-history li:last-child::before {
+  display: none;
+}
+.school-history li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--mint);
+}
+.school-history strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+.contact-copy p {
+  max-width: 42ch;
+}
+.contact-channels {
+  min-width: 0;
+  display: grid;
+  border-block: 1px solid var(--line);
+  font-style: normal;
+}
+.contact-channels a {
+  display: grid;
+  grid-template-columns: 32px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 8px;
+  transition: background 0.2s;
+}
+.contact-channels a + a {
+  border-top: 1px solid var(--line);
+}
+.contact-channels a:hover,
+.contact-channels a:focus-visible {
+  background: var(--wash);
+}
+.contact-channels .channel-icon {
+  color: var(--mint);
+}
+.contact-channels small,
+.contact-channels strong {
+  display: block;
+}
+.contact-channels strong {
+  font-size: clamp(15px, 1.4vw, 21px);
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+  margin-top: 3px;
+}
+@media (max-width: 680px) {
+  .header-inner {
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding-top: 8px;
+  }
+  .header-actions {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .header-inner nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: space-between;
+    gap: 6px;
+    margin: 4px 0 0;
+    border-top: 1px solid var(--line);
+  }
+  .header-inner nav a {
+    padding-block: 10px;
+  }
+  .mobile-contact-link {
+    display: inline;
+  }
+  .education-grid,
+  .contact-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  .contact-channels a {
+    padding: 16px 3px;
+    gap: 8px;
   }
 }

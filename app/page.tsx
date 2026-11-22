@@ -4,7 +4,8 @@ import {
   ArrowUpRight,
   Braces,
   Download,
-  GraduationCap,
+  Mail,
+  MessageSquare,
   Languages,
   Code2,
   Database,
@@ -17,8 +18,11 @@ import ThemeButton from "../components/ThemeButton";
 import Flux from "../components/Flux";
 import Projects from "../components/Projects";
 import Experience from "../components/Experience";
+import Education from "../components/Education";
 
 const github = "https://github.com/vuthysreang";
+const linkedin = "https://www.linkedin.com/in/vuthy-sreang/";
+const email = "vuthysreang.zevo@gmail.com";
 const stack = [
   {
     title: "Web & mobile",
@@ -64,6 +68,10 @@ export default function Portfolio() {
             <a href="#experience">Experience</a>
             <a href="#work">Projects</a>
             <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a className="mobile-contact-link" href="#contact">
+              Contact
+            </a>
           </nav>
           <div className="header-actions">
             <ThemeButton />
@@ -164,27 +172,14 @@ export default function Portfolio() {
                 study on their phones. At FWD, I applied the same skills to
                 insurance sales, renewals, and payments.
               </p>
-              <dl className="profile-facts">
-                <div>
-                  <dt>
-                    <GraduationCap size={17} />
-                    Education
-                  </dt>
-                  <dd>Bachelor of Software Engineering</dd>
-                  <dd>Kirirom Institute of Technology · 2017–2021</dd>
-                </div>
-                <div>
-                  <dt>
-                    <Languages size={17} />
-                    Languages
-                  </dt>
-                  <dd>Khmer · Native</dd>
-                  <dd>English · Fluent</dd>
-                </div>
-              </dl>
+              <p className="profile-languages">
+                <Languages size={17} aria-hidden="true" />I speak Khmer as my
+                native language and English fluently.
+              </p>
             </div>
           </div>
         </section>
+        <Education />
         <section className="wrap stack" id="stack">
           <div className="section-kicker">
             <span />
@@ -203,21 +198,51 @@ export default function Portfolio() {
             ))}
           </div>
         </section>
-        <section id="contact" className="contact">
+        <section
+          id="contact"
+          className="contact"
+          aria-labelledby="contact-title"
+        >
           <div className="wrap contact-inner">
-            <div>
+            <div className="contact-copy">
               <div className="section-kicker">
                 <span />
                 Contact
               </div>
-              <h2>
-                Let’s build something<span>.</span>
+              <h2 id="contact-title">
+                Get in touch<span>.</span>
               </h2>
-              <p>Have a web or mobile project in mind? Send me a short note.</p>
+              <p>
+                Have a web or mobile project in mind? Tell me what you’re
+                building and where you could use a hand.
+              </p>
+              <div className="location">
+                <MapPin size={15} aria-hidden="true" /> Phnom Penh, Cambodia{" "}
+                <i /> UTC+7
+              </div>
             </div>
-            <a className="primary" href="mailto:vuthysreang.zevo@gmail.com">
-              Email me <ArrowUpRight size={17} />
-            </a>
+            <address className="contact-channels">
+              <a href={"mailto:" + email}>
+                <Mail className="channel-icon" size={22} aria-hidden="true" />
+                <span>
+                  <small>Email me</small>
+                  <strong>{email}</strong>
+                </span>
+                <ArrowUpRight size={17} aria-hidden="true" />
+              </a>
+              <a href={linkedin} target="_blank" rel="noreferrer">
+                <MessageSquare
+                  className="channel-icon"
+                  size={22}
+                  aria-hidden="true"
+                />
+                <span>
+                  <small>Connect on LinkedIn</small>
+                  <strong>Vuthy Sreang</strong>
+                </span>
+                <ArrowUpRight size={17} aria-hidden="true" />
+              </a>
+            </address>
           </div>
         </section>
       </main>
@@ -230,11 +255,7 @@ export default function Portfolio() {
           <a href={github} target="_blank" rel="noreferrer">
             GitHub <ArrowUpRight size={12} />
           </a>
-          <a
-            href="https://www.linkedin.com/in/vuthy-sreang/"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href={linkedin} target="_blank" rel="noreferrer">
             LinkedIn <ArrowUpRight size={12} />
           </a>
         </div>
