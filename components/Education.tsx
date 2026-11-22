@@ -1,4 +1,4 @@
-import { ArrowUpRight, GraduationCap } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 
 const schools = [
   { name: "Hunsen1Mithona High School", years: "2015–2017" },
@@ -28,14 +28,6 @@ export default function Education() {
             In my final year, I used R notebooks to explore datasets and
             document my analysis.
           </p>
-          <a
-            className="text-link"
-            href="https://github.com/vuthysreang/datascience_porfolio"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Explore my coursework <ArrowUpRight size={15} />
-          </a>
         </article>
         <div className="school-history">
           <h3>Earlier education</h3>

@@ -36,7 +36,9 @@ export default function Experience() {
             </summary>
             <div className="role-details">
               <span className="role-meta">
-                {role.level} · {role.location}
+                {[role.level, role.employmentType, role.location, role.workMode]
+                  .filter(Boolean)
+                  .join(" · ")}
               </span>
               <p>{role.summary}</p>
               <ul>

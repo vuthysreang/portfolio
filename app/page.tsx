@@ -95,8 +95,9 @@ export default function Portfolio() {
                 Sreang<span>.</span>
               </h1>
               <p>
-                I build web and mobile software for insurance, payments, and
-                education. Based in <span>Phnom Penh, Cambodia.</span>
+                I build HR software at ABA Bank and have worked on insurance,
+                payments, and mobile apps. Based in{" "}
+                <span>Phnom Penh, Cambodia.</span>
               </p>
               <div className="hero-actions">
                 <a href="#experience" className="primary">
@@ -142,12 +143,8 @@ export default function Portfolio() {
         <section id="about" className="about">
           <div className="wrap about-grid">
             <div>
-              <div className="section-kicker">
-                <span />
-                About me
-              </div>
               <h2>
-                Behind the code<span>.</span>
+                About me<span>.</span>
               </h2>
               <div className="location">
                 <MapPin size={15} /> Phnom Penh, Cambodia <i /> UTC+7
@@ -163,15 +160,31 @@ export default function Portfolio() {
                   loading="lazy"
                 />
                 <p>
-                  I’m Vuthy. I build the interfaces people use and the APIs
-                  behind them.
+                  Experienced Full-Stack web developer with a passion for all
+                  aspects of the software development life cycle. Proven team
+                  collaborator and a self-managing individual for independent
+                  projects.
                 </p>
               </div>
-              <p>
-                My early work connected Cambodian developers and helped students
-                study on their phones. At FWD, I applied the same skills to
-                insurance sales, renewals, and payments.
-              </p>
+              <ul className="about-notes">
+                <li>
+                  I’m currently working on{" "}
+                  <strong>full-stack web applications</strong>.
+                </li>
+                <li>
+                  I’m currently learning <strong>🤫 ...</strong>
+                </li>
+                <li>
+                  Ask me about{" "}
+                  <strong>
+                    Front-End, Back-End, APIs, Databases &amp; DevOps
+                  </strong>
+                  .
+                </li>
+                <li>
+                  Fun fact: <strong>I think I’m funny 😎</strong>
+                </li>
+              </ul>
               <p className="profile-languages">
                 <Languages size={17} aria-hidden="true" />I speak Khmer as my
                 native language and English fluently.

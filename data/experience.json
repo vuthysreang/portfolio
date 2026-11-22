@@ -1,8 +1,22 @@
 [
   {
+    "company": "ABA Bank",
+    "title": "HRMS Developer",
+    "employmentType": "Full-time",
+    "dates": "Nov 2024 – Present",
+    "location": "Phnom Penh, Cambodia",
+    "workMode": "On-site",
+    "summary": "I develop backend features for ABA Bank’s human resource management system (HRMS).",
+    "details": [
+      "My main areas are leave management, shift scheduling, and overtime management."
+    ],
+    "tools": ["Backend Development", "TypeScript"]
+  },
+  {
     "company": "FWD Life Insurance Cambodia",
     "title": "Web Application Developer",
     "level": "Senior",
+    "employmentType": "Contract",
     "dates": "Apr 2022 – Sep 2024",
     "location": "Phnom Penh",
     "summary": "Built insurance tools for customers and agents, from product sales to policy renewal.",

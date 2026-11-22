@@ -1036,6 +1036,23 @@ footer a,
 .mobile-contact-link {
   display: none;
 }
+.about-notes {
+  margin: 16px 0 0;
+  padding-left: 19px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+.about-notes li + li {
+  margin-top: 4px;
+}
+.about-notes li::marker {
+  color: var(--mint);
+}
+.about-notes strong {
+  color: var(--fg);
+  font-weight: 600;
+}
 .bio .profile-languages {
   display: flex;
   align-items: center;
@@ -1102,10 +1119,6 @@ footer a,
   margin: 8px 0 0;
   color: var(--fg);
   font-weight: 600;
-}
-.degree-card .text-link {
-  display: inline-flex;
-  color: var(--mint);
 }
 .school-history h3 {
   font-size: 20px;
