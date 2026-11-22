@@ -3,6 +3,9 @@ import {
   ArrowDownRight,
   ArrowUpRight,
   Braces,
+  Download,
+  GraduationCap,
+  Languages,
   Code2,
   Database,
   Layers3,
@@ -13,17 +16,30 @@ import {
 import ThemeButton from "../components/ThemeButton";
 import Flux from "../components/Flux";
 import Projects from "../components/Projects";
+import Experience from "../components/Experience";
 
 const github = "https://github.com/vuthysreang";
 const stack = [
-  { title: "Interface", text: "React · Next.js · Vue", icon: Layers3 },
-  { title: "Backend", text: "Node.js · NestJS · Spring Boot", icon: Terminal },
   {
-    title: "Languages",
-    text: "TypeScript · JavaScript · Java · Python",
+    title: "Web & mobile",
+    text: "React · Next.js · React Native · Tailwind CSS",
+    icon: Layers3,
+  },
+  {
+    title: "APIs",
+    text: "Java · Spring Boot · TypeScript · NestJS · Express",
     icon: Braces,
   },
-  { title: "Data", text: "PostgreSQL · MongoDB · R", icon: Database },
+  {
+    title: "Databases",
+    text: "PostgreSQL · MySQL · SQL Server · MongoDB",
+    icon: Database,
+  },
+  {
+    title: "Delivery",
+    text: "Docker · Jenkins · Kubernetes · AWS · Git",
+    icon: Terminal,
+  },
 ];
 function Brand() {
   return (
@@ -45,9 +61,9 @@ export default function Portfolio() {
         <div className="wrap header-inner">
           <Brand />
           <nav aria-label="Main navigation">
-            <a href="#work">Work</a>
+            <a href="#experience">Experience</a>
+            <a href="#work">Projects</a>
             <a href="#about">About</a>
-            <a href="#stack">Stack</a>
           </nav>
           <div className="header-actions">
             <ThemeButton />
@@ -71,34 +87,34 @@ export default function Portfolio() {
                 Sreang<span>.</span>
               </h1>
               <p>
-                I build thoughtful interfaces and the systems that power them.
-                Creating from <span>Cambodia.</span>
+                I build web and mobile software for insurance, payments, and
+                education. Based in <span>Phnom Penh, Cambodia.</span>
               </p>
               <div className="hero-actions">
-                <a href="#work" className="primary">
-                  Explore my work <ArrowDownRight size={17} />
+                <a href="#experience" className="primary">
+                  View experience <ArrowDownRight size={17} />
                 </a>
                 <a
-                  href={github}
+                  href="./Vuthy-Sreang-CV.pdf"
                   className="github-link"
-                  target="_blank"
-                  rel="noreferrer"
+                  download
                 >
-                  GitHub <ArrowUpRight size={15} />
+                  Download CV <Download size={15} />
                 </a>
               </div>
             </div>
             <Flux />
-            <a className="scroll-cue" href="#work">
+            <a className="scroll-cue" href="#experience">
               <ArrowDown size={12} />
               Scroll to explore
             </a>
           </div>
         </section>
+        <Experience />
         <section id="work" className="wrap work">
           <div className="section-kicker">
             <span />
-            Portfolio
+            Personal projects
           </div>
           <div className="section-heading">
             <h2>
@@ -126,28 +142,46 @@ export default function Portfolio() {
                 Behind the code<span>.</span>
               </h2>
               <div className="location">
-                <MapPin size={15} /> Cambodia <i /> UTC+7
+                <MapPin size={15} /> Phnom Penh, Cambodia <i /> UTC+7
               </div>
             </div>
             <div className="bio">
+              <div className="profile-intro">
+                <img
+                  src="./art/vuthy-sreang.webp"
+                  width="96"
+                  height="96"
+                  alt="Vuthy Sreang"
+                  loading="lazy"
+                />
+                <p>
+                  I’m Vuthy. I build the interfaces people use and the APIs
+                  behind them.
+                </p>
+              </div>
               <p>
-                I’m Vuthy, a full-stack web developer with a soft spot for the
-                details you can feel when you use a product.
+                My early work connected Cambodian developers and helped students
+                study on their phones. At FWD, I applied the same skills to
+                insurance sales, renewals, and payments.
               </p>
-              <p>
-                I work across interfaces, APIs, and databases. My public
-                projects range from email infrastructure to data notebooks, and
-                this site gives me a space to experiment with motion and
-                creative coding.
-              </p>
-              <a
-                className="text-link"
-                href={github}
-                target="_blank"
-                rel="noreferrer"
-              >
-                My GitHub profile <ArrowUpRight size={15} />
-              </a>
+              <dl className="profile-facts">
+                <div>
+                  <dt>
+                    <GraduationCap size={17} />
+                    Education
+                  </dt>
+                  <dd>Bachelor of Software Engineering</dd>
+                  <dd>Kirirom Institute of Technology · 2017–2021</dd>
+                </div>
+                <div>
+                  <dt>
+                    <Languages size={17} />
+                    Languages
+                  </dt>
+                  <dd>Khmer · Native</dd>
+                  <dd>English · Fluent</dd>
+                </div>
+              </dl>
             </div>
           </div>
         </section>
@@ -179,7 +213,7 @@ export default function Portfolio() {
               <h2>
                 Let’s build something<span>.</span>
               </h2>
-              <p>Have a project in mind? I’d love to hear about it.</p>
+              <p>Have a web or mobile project in mind? Send me a short note.</p>
             </div>
             <a className="primary" href="mailto:vuthysreang.zevo@gmail.com">
               Email me <ArrowUpRight size={17} />

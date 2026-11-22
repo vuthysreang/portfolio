@@ -6,7 +6,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Vuthy Sreang — Full-stack developer",
   description:
-    "Full-stack web development, open-source projects, and interactive experiments by Vuthy Sreang, based in Cambodia.",
+    "Vuthy Sreang is a full-stack developer in Phnom Penh, Cambodia, with experience in insurance platforms, mobile apps, and payment integrations. Explore his work and CV.",
 };
 export const viewport: Viewport = {
   width: "device-width",

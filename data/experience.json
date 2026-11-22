@@ -1,0 +1,52 @@
+[
+  {
+    "company": "FWD Life Insurance Cambodia",
+    "title": "Web Application Developer",
+    "level": "Senior",
+    "dates": "Apr 2022 – Sep 2024",
+    "location": "Phnom Penh",
+    "summary": "Built insurance tools for customers and agents, from product sales to policy renewal.",
+    "details": [
+      "Developed the customer renewal portal and integrated ABA KHQR and app-based payments.",
+      "Helped bring FWD products into the CMCB banking app and contributed to the web sales platform.",
+      "Worked on a Spring Boot payment gateway and backend services built with NestJS and Express."
+    ],
+    "tools": ["Next.js", "NestJS", "Spring Boot", "Jenkins"]
+  },
+  {
+    "company": "Kirirom Digital Cambodia",
+    "title": "Mobile App Developer",
+    "level": "Junior",
+    "dates": "Jan 2022 – Mar 2022",
+    "location": "Phnom Penh",
+    "summary": "Built cross-platform mobile features for clients using React Native.",
+    "details": [
+      "Implemented mobile interfaces in JavaScript and tested API requests with Postman and Insomnia."
+    ],
+    "tools": ["React Native", "JavaScript", "Android Studio"]
+  },
+  {
+    "company": "A2A Digital",
+    "title": "Backend Developer",
+    "level": "Intern",
+    "dates": "Apr 2021 – Sep 2021",
+    "location": "Kampong Speu",
+    "summary": "Built APIs for Slecret, a Khmer-language community for students and developers.",
+    "details": [
+      "Designed PostgreSQL schemas, documented REST endpoints, and deployed the service with Docker and Nginx."
+    ],
+    "tools": ["Express", "PostgreSQL", "Docker", "Nginx"]
+  },
+  {
+    "company": "Coollab Team",
+    "title": "Backend Developer",
+    "level": "Intern",
+    "dates": "Feb 2021 – May 2021",
+    "location": "Phnom Penh",
+    "summary": "Developed the backend for Desquiz, a mobile quiz app for medicine and chemistry.",
+    "details": [
+      "Built server-side logic, managed the database, and integrated APIs for the Android and iOS app."
+    ],
+    "tools": ["Express", "Sequelize", "PostgreSQL"]
+  }
+]

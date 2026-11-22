@@ -45,7 +45,7 @@ function Artwork({ index }: { index: number }) {
       <div className="art-grid" />
       <span className="art-corner">+</span>
       <span className="art-id">VS—0{index + 1}</span>
-      <img src={"/art/" + p.art + ".webp"} alt="" width="810" height="425" />
+      <img src={"./art/" + p.art + ".webp"} alt="" width="810" height="425" />
     </div>
   );
 }
